@@ -1,4 +1,5 @@
 const colors = require("colors")
+
 /* 1) Crear un archivo llamado cuentaBancaria.js, dentro de este
 archivo realizar los siguientes métodos. */
 
@@ -37,32 +38,9 @@ validar el saldo y que haya saldo suficiente.
 
 /* e) Ejecutar las promesas y definir como se debe comportar en cada
 caso (resuelto/rechazado) pasándole las callbacks necesarias. */
-function procesarTransferencia() {
-    validarSaldo()
-        .then(response => {
-            console.log(".then de validar Saldo")
-            console.log(`La respuesta recibida es ${response}`)
-            return ejecutarTransferencia()
-        })
-        .then(response => {
-            console.log(".then de ejecutar Transferencia")
-            console.log(`La respuesta recibida es ${response}`.green)
-        })
-        .catch(error => {
-            console.log("Catch")
-            console.log(`El error es: ${error}`)
-        })
-
-        /* d) En cualquiera de los casos se debe ejecutar un log en consola
-        que informe que se finalizó la operación. (había un método de la
-        promesa que le paso un callback que se ejecuta en cualquiera de
-        los dos casos)
-         */
-        .finally(() => {
-            console.log("Se finalizó la operación")
-        })
+module.exports={
+    validarSaldo,ejecutarTransferencia
 }
-procesarTransferencia()
 
 
 

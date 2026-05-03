@@ -1,16 +1,14 @@
+const {
+    ejercicio2e
+}=require("./modulos")
 /* 2) Crear un archivo llamado instituto.js, dentro de este archivo
 crear un objeto que se llame alumno con las siguientes
 propiedades: Nombre, Edad, inscriptoAMaterias (un array de
 strings), debeCorrelativa (un booleano)
 realizar los siguientes métodos.
  */
-const alumno = {
-nombre:"Martin",
-edad:20,
-inscriptoAMaterias:["Backend","Frontend","Ing. de Software","PP3"],
-debeCorrelativa:true
-}
-const nombreMateria= "Optativa"
+
+
 
 /* a) Se desea generar un método para realizar una inscripción a una
 materia (recibe como parámetro de entrada el objeto alumno, y el
@@ -54,21 +52,7 @@ return new Promise ((resolve,reject)=>{
 consola que informe que se finalizó la operación. */
 /* e) Ejecutar las promesas y definir como se debe comportar en cada
 caso (resuelto/rechazado) */
-function procesarInscripcion(){
-    validarCorrelativa(alumno)
-    .then(response=>{
-        console.log(`${response}`)
-        return inscripcionMateria(alumno,nombreMateria)
-    })
-    .then(response=>{
-        console.log(`${response}`)
-    })
-    .catch(error=>{
-        console.log("error")
-        console.log(`${error}`)
-    })
-    .finally(()=>{
-        console.log(`Se finalizó la operación, estas son sus materias: ${alumno.inscriptoAMaterias}`)
-    })
+module.exports={
+    validarCorrelativa,inscripcionMateria
 }
-    procesarInscripcion()
+ 

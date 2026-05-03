@@ -1,38 +1,9 @@
+const {ejercicio3f}=require("./modulos")
 /* 3) Crear un archivo llamado mercadoRestringido.js, dentro de este
 archivo generar cinco objetos de tipo producto, deben tener las
 propiedades: id, nombreProducto, precio, stock. Guardar los
 cinco objetos en un array llamado productos. */
-const producto1 = {
-    id: 1,
-    nombreProducto: "Limpiador",
-    precio: 1800,
-    stock: 10
-}
-const producto2 = {
-    id: 2,
-    nombreProducto: "Escoba",
-    precio: 3000,
-    stock: 5
-}
-const producto3 = {
-    id: 3,
-    nombreProducto: "Desodorante",
-    precio: 2600,
-    stock: 20
-}
-const producto4 = {
-    id: 4,
-    nombreProducto: "Secador",
-    precio: 3200,
-    stock: 15
-}
-const producto5 = {
-    id: 5,
-    nombreProducto: "Trapo",
-    precio: 1500,
-    stock: 15
-}
-const productos = [producto1, producto2, producto3, producto4, producto5]
+
 /* a) Se desea generar un método para realizar venta, validar stock y
 generar etiqueta de envío. 
 El método validarStock recibe como
@@ -64,8 +35,7 @@ function validarStock(nombreProducto, productos) {
     })
 
 }
-const cantidadVendida=8
-const nombreProducto="Escoba"
+
 /*El método realizarVenta, debe recibir como parámetro de entrada un
 objeto producto, y en caso de que se ejecute la venta, descontar
 la cantidad vendida del producto.*/
@@ -105,25 +75,8 @@ que informe que se finalizó la operación. */
 /* f) Ejecutar las promesas y definir como se debe comportar en cada
 caso (resuelto/rechazado)
  */
-function ejecutarVenta() {
-    validarStock(nombreProducto, productos)
-        .then(producto => {
-            console.log(producto)
-            return realizarVenta(producto, cantidadVendida)
-        })
-        .then(response => {
-            console.log(response)
-            return imprimirEtiqueta(nombreProducto)
-        })
-        .then(response => {
-            console.log(response)
-        })
-        .catch(error => {
-            console.log("Error")
-            console.log(error)
-        })
-        .finally(() => {
-            console.log("Se finalizó el proceso")
-        })
+module.exports={
+validarStock,realizarVenta,imprimirEtiqueta
 }
-ejecutarVenta()
+
+
